@@ -1,0 +1,43 @@
+<TMPL_INCLUDE NAME="partial/head.tmpl">
+<!-- BODY matter.  Starts off with a table with the logo on the left, and various headlines on the right -->
+<body> 
+	<TMPL_INCLUDE NAME="partial/logo_navigation.tmpl">
+	<div class="box">
+		<ul>	
+			<!-- Outer body loop, going down, the groups (at this (current) level.  Listing level 1! -->
+			<TMPL_LOOP NAME="GROUPS">
+			<li>
+				<span class="domain"><a mytag="node" href="<TMPL_VAR NAME="URLX">"><TMPL_VAR ESCAPE="HTML" NAME="NAME"></a></span>
+				<ul>
+					<!-- In each group there are N categories -->
+					<TMPL_IF NAME="NCATEGORIES">
+					<TMPL_LOOP NAME="CATEGORIES">
+					<li>
+						<span class="host"><a mytag="category" href="<TMPL_VAR NAME="URLX">"><TMPL_VAR ESCAPE="HTML" NAME="NAME"></a></span>
+						<ul>
+							<!-- And in each categroy there are M services -->
+							<TMPL_LOOP NAME="SERVICES">
+							<li>
+								<span class="service">
+									<a mytag="service" <TMPL_IF NAME="STATE_WARNING">class="warn"</TMPL_IF> <TMPL_IF NAME="STATE_CRITICAL">class="crit"</TMPL_IF> href="<TMPL_VAR NAME="URLX">"><TMPL_VAR ESCAPE="HTML" NAME="NAME"></a>										
+								</span>
+							</li>
+							</TMPL_LOOP>
+							<!-- SERVICES -->
+						</ul>
+					</li>
+					</TMPL_LOOP><!--CATEGORIES -->
+					</TMPL_IF><!-- NCATEGORIES -->
+				</ul>
+			</li>
+			</TMPL_LOOP>
+		</ul>
+	</div>
+	<!-- Start of end matter: A line of "pages at the same nesting level ("peers") -->
+	<div class="linkbox">
+			<TMPL_INCLUDE NAME="partial/bottom_navigation.tmpl">
+	</div>
+	<!-- End of end: A line containing the munin signature -->
+	<TMPL_INCLUDE NAME="partial/generated_by.tmpl">
+</body>
+</html>
