@@ -12,6 +12,6 @@
 	<link rel="SHORTCUT ICON" href="<TMPL_VAR NAME="ROOT_PATH"><TMPL_IF ROOT_PATH>/<TMPL_ELSE></TMPL_IF>favicon.ico"/>
 	<script type="text/javascript" src="<TMPL_VAR NAME="ROOT_PATH"><TMPL_IF ROOT_PATH>/<TMPL_ELSE></TMPL_IF>raven-htmldir-files/raven.js"><!-- my js --></script>
 	<script>
-		setTimeout("document.location.reload()",30000);
+		setTimeout("document.location.reload()",5*60*1000); /*Auto-Refresh after 5 minutes*/
 	</script>
 </head>
