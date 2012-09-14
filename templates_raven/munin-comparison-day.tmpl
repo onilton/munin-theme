@@ -3,12 +3,12 @@
 
 <TMPL_INCLUDE NAME="partial/logo_navigation_comparison.tmpl">
 
-	<div><!--<table class="invisiblebox">-->
+	<div>
 		<div id=categories>
 			  <TMPL_LOOP NAME="CATEGORIES">
 						<fieldset>
 							<legend><TMPL_VAR ESCAPE="HTML" NAME="GROUPNAME"></legend>
-							<div class="graphbox" id="<TMPL_VAR ESCAPE="HTML" NAME="GROUPNAME">"> <!--<tr><td class="graphbox" id="<TMPL_VAR ESCAPE="HTML" NAME="GROUPNAME">">-->
+							<div class="graphbox" id="<TMPL_VAR ESCAPE="HTML" NAME="GROUPNAME">"> 
 								  <table>
 									<tr><td colspan="<TMPL_VAR NAME="NGROUPS">"><h3 class="nobottom"> <TMPL_VAR ESCAPE="HTML" NAME="GROUPNAME"></h3></td></tr>
 									<TMPL_LOOP NAME="SERVICES">
@@ -27,20 +27,20 @@
 									  </tr>
 									</TMPL_LOOP>
 									</table>
-							</div> <!--  </td></tr>-->
+							</div> 
 						</fieldset>
 
-			<!--  <tr><td></td></tr> -->
+			
 
 			  </TMPL_LOOP>
-			<!--  <tr> -->
+			
 		</div>
 	</div>
-	<div class="linkbox"> <!-- <td class="linkbox"> -->
+	<div class="linkbox"> 
         <TMPL_INCLUDE NAME="partial/bottom_navigation.tmpl">
-	</div>      <!-- </td> -->
-<!--  </tr> -->
-<!-- </table> -->
+	</div>
+
+
  <TMPL_INCLUDE NAME="partial/generated_by.tmpl">
 </body>
 </html>
